@@ -25,6 +25,8 @@ body {
 }
 
 .counterContainer {
+  font-family: 'Dancing Script', cursive;
+
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.4); 
   color: white;
@@ -38,4 +40,17 @@ body {
   width: 80%;
   padding: 20px;
   text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.subheading {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.counterContainer span {
+  font-size: 2em;
 }
