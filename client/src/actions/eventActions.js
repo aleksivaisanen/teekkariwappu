@@ -24,7 +24,8 @@ export const addEvent = item => (dispatch, getState) => {
     .then(res =>
       dispatch({
         type: ADD_EVENT,
-        payload: res.data
+        payload: res.data,
+        status: res.status
       })
     )
     .catch(err =>

@@ -26,7 +26,8 @@ export default function (state = initialState, action) {
     case ADD_EVENT:
       return {
         ...state,
-        events: [action.payload, ...state.events]
+        events: [action.payload, ...state.events],
+        status: action.status
       };
     case EVENTS_LOADING:
       return {

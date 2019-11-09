@@ -7,28 +7,57 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
+  Alert
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addEvent } from '../actions/eventActions';
 import DateTimePicker from 'react-datetime-picker';
 import PropTypes from 'prop-types';
+import { clearErrors } from '../actions/errorActions';
 
 class EventModal extends Component {
   state = {
     modal: false,
     name: '',
     date: new Date(),
+    place: '',
+    enrolLink: '',
+    description: '',
+    errorMsg: null
   };
 
   static propTypes = {
-    isAuthenticated: PropTypes.bool
+    isAuthenticated: PropTypes.bool,
+    error: PropTypes.object.isRequired,
+    clearErrors: PropTypes.func.isRequired
   };
 
+  componentDidUpdate(prevProps) {
+    const { error } = this.props;
+    if (error !== prevProps.error) {
+      // Check for register error
+      if (error != null) {
+        this.setState({ errorMsg: error.msg.msg });
+      } else {
+        this.setState({ errorMsg: null });
+      }
+    }
+  }
+
   toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
+    if (this.state.modal) {
+      const conf = window.confirm('Haluatko poistua tallentamatta tapahtuman tietoja?');
+      if (conf) {
+        this.setState({
+          modal: !this.state.modal
+        });
+      }
+    } else {
+      this.setState({
+        modal: !this.state.modal
+      });
+    }
   };
 
   onChange = e => {
@@ -40,23 +69,43 @@ class EventModal extends Component {
   }
 
   onSubmit = e => {
+    const { error } = this.props;
     e.preventDefault();
 
     const newEvent = {
       name: this.state.name,
-      date: this.state.date
+      date: this.state.date,
+      place: this.state.place,
+      enrolLink: this.state.enrolLink,
+      description: this.state.description
     };
+
+    // clear errors
+    this.props.clearErrors();
 
     // Add event via addEvent action
     this.props.addEvent(newEvent);
 
     // Close modal
-    this.toggle();
+    this.setState({
+      modal: !this.state.modal
+    });
   };
 
   render() {
+    let alert;
+    const { status } = this.props.event;
+    if (status == 200) {
+      alert = <Alert color="success">Tapahtuma lisättiin onnistuneesti!</Alert>
+    } else if (this.state.errorMsg != null) {
+      alert = <Alert color="danger">{this.state.errorMsg}</Alert>
+    } else {
+      alert = null;
+    }
+
     return (
       <div>
+        {alert}
         <Button
           color='dark'
           style={{ marginBottom: '2rem' }}
@@ -64,7 +113,7 @@ class EventModal extends Component {
         >
           Lisää tapahtuma
           </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} backdrop="static">
           <ModalHeader toggle={this.toggle}>Lisää tapahtuma</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
@@ -83,6 +132,28 @@ class EventModal extends Component {
                   onChange={this.onDateChange}
                   value={this.state.date}
                 />
+                <Label for='place'>Tapahtuman paikka</Label>
+                <Input
+                  type='text'
+                  name='place'
+                  id='place'
+                  onChange={this.onChange}
+                />
+                <Label for='enrolLink'>Ilmoittautumislinkki</Label>
+                <Input
+                  type='text'
+                  name='enrolLink'
+                  id='enrolLink'
+                  onChange={this.onChange}
+                />
+                <Label for='description'>Tapahtuman kuvaus</Label>
+                <Input
+                  type='textarea'
+                  name='description'
+                  id='description'
+                  onChange={this.onChange}
+                  rows={4}
+                />
                 <Button color='dark' style={{ marginTop: '2rem' }} block>
                   Lisää tapahtuma
                 </Button>
@@ -97,10 +168,11 @@ class EventModal extends Component {
 
 const mapStateToProps = state => ({
   event: state.event,
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  error: state.error,
 });
 
 export default connect(
   mapStateToProps,
-  { addEvent }
+  { addEvent, clearErrors }
 )(EventModal);

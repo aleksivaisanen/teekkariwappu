@@ -20,10 +20,17 @@ router.get('/', (req, res) => {
 router.post('/', auth, (req, res) => {
   const newEvent = new Event({
     name: req.body.name,
-    date: req.body.date
+    date: req.body.date,
+    place: req.body.place,
+    enrolLink: req.body.enrolLink,
+    description: req.body.description
   });
 
-  newEvent.save().then(event => res.json(event));
+  if (req.body.name == "") {
+    res.status(400).json({ msg: "Tapahtuman nimi ei saa olla tyhjä!" })
+  } else {
+    newEvent.save().then(event => res.json(event));
+  }
 });
 
 // @route   DELETE api/events/:id

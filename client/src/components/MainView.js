@@ -11,7 +11,6 @@ class MainView extends Component {
 
     render() {
         const isAuthenticated = this.props.auth.isAuthenticated && localStorage.getItem('token') != null;
-
         let mainView;
         if (isAuthenticated) {
             mainView = <AdminEventView />

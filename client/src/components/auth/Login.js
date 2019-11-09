@@ -64,10 +64,8 @@ class Login extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    // clear alert
-    this.setState({
-      msg: null
-    })
+    // clear errors
+    this.props.clearErrors();
 
     const { username, password } = this.state;
 
