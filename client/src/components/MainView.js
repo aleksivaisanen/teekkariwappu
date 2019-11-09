@@ -9,7 +9,7 @@ class MainView extends Component {
     };
 
     render() {
-        const { isAuthenticated } = this.props.auth;
+        const isAuthenticated = this.props.auth.isAuthenticated && localStorage.getItem('token') != null;
 
         let mainView;
         if (isAuthenticated) {

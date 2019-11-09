@@ -26,7 +26,7 @@ class AppNavbar extends Component {
   };
 
   render() {
-    const isAuthenticated = this.props.auth.isAuthenticated;
+    const isAuthenticated = this.props.auth.isAuthenticated && localStorage.getItem("token") != null;
 
     const authLinks = (
       <Fragment>
