@@ -7,8 +7,12 @@ const mongoose = require('mongoose');
 const path = require('path');
 const config = require('config');
 const dataInitializer = require('./dataInitializer.js');
+const helmet = require('helmet')
 
 const app = express();
+
+// use helmet to set various HTTP headers to protect the app
+app.use(helmet())
 
 // Bodyparser Middleware
 app.use(express.json());

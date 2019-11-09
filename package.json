@@ -19,6 +19,7 @@
     "config": "^3.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.16.3",
+    "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.1.6",
     "react-router-dom": "^5.1.2"
