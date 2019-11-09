@@ -33,13 +33,13 @@ There is a Heroku post build script so that you do not have to compile your Reac
 
 ### Author
 
-Aleksi Väisänen
+Aleksi Väisänen  
 [Github](https://github.com/aleksivaisanen)
 
-Original backendstructude made by:
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
-[Github](https://github.com/bradtraversy/mern_shopping_list)
+Original server template made by:  
+Brad Traversy  
+[Traversy Media](http://www.traversymedia.com)  
+[Github](https://github.com/bradtraversy/mern_shopping_list)  
 
 ### Version
 
