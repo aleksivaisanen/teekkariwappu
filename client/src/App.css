@@ -19,3 +19,15 @@
   opacity: 0.01;
   transition: opacity 1000ms ease-in;
 }
+
+/* DateTime picker styles */
+.react-datetime-picker {
+  display: block;
+  padding: .375rem .75rem;
+  border: thin solid #ced4da;
+  border-radius: .25rem;
+}
+
+.react-datetime-picker__wrapper {
+  border: none;
+}

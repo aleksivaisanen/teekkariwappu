@@ -6,7 +6,7 @@ const auth = require('../../middleware/auth');
 const Event = require('../../models/Event');
 
 // @route   GET api/events
-// @desc    Get All Items
+// @desc    Get All Events
 // @access  Public
 router.get('/', (req, res) => {
   Event.find()
@@ -15,11 +15,12 @@ router.get('/', (req, res) => {
 });
 
 // @route   POST api/events
-// @desc    Create An Item
+// @desc    Create An Event
 // @access  Private
 router.post('/', auth, (req, res) => {
   const newEvent = new Event({
-    name: req.body.name
+    name: req.body.name,
+    date: req.body.date
   });
 
   newEvent.save().then(event => res.json(event));

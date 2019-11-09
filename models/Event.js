@@ -10,7 +10,15 @@ const EventSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now
+  },
+  place: {
+    type: String
+  },
+  enrolLink: {
+    type: String
+  },
+  description: {
+    type: String
   }
 });
 

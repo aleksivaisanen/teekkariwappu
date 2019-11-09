@@ -11,12 +11,14 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addEvent } from '../actions/eventActions';
+import DateTimePicker from 'react-datetime-picker';
 import PropTypes from 'prop-types';
 
 class EventModal extends Component {
   state = {
     modal: false,
-    name: ''
+    name: '',
+    date: new Date(),
   };
 
   static propTypes = {
@@ -33,11 +35,16 @@ class EventModal extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  onDateChange = date => {
+    this.setState({ date });
+  }
+
   onSubmit = e => {
     e.preventDefault();
 
     const newEvent = {
-      name: this.state.name
+      name: this.state.name,
+      date: this.state.date
     };
 
     // Add event via addEvent action
@@ -50,33 +57,34 @@ class EventModal extends Component {
   render() {
     return (
       <div>
-        {this.props.isAuthenticated ? (
-          <Button
-            color='dark'
-            style={{ marginBottom: '2rem' }}
-            onClick={this.toggle}
-          >
-            Add Item
+        <Button
+          color='dark'
+          style={{ marginBottom: '2rem' }}
+          onClick={this.toggle}
+        >
+          Lisää tapahtuma
           </Button>
-        ) : (
-            <h4 className='mb-3 ml-4'>Please log in to manage items</h4>
-          )}
-
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Add To Shopping List</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Lisää tapahtuma</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for='item'>Item</Label>
+                <Label for='name'>Tapahtuman nimi</Label>
                 <Input
                   type='text'
                   name='name'
-                  id='item'
-                  placeholder='Add shopping item'
+                  id='name'
                   onChange={this.onChange}
                 />
+                <Label for='date'>Milloin tapahtuma on?</Label>
+                <DateTimePicker
+                  id='date'
+                  name='date'
+                  onChange={this.onDateChange}
+                  value={this.state.date}
+                />
                 <Button color='dark' style={{ marginTop: '2rem' }} block>
-                  Add Item
+                  Lisää tapahtuma
                 </Button>
               </FormGroup>
             </Form>
