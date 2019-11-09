@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import {
+  Container,
+  Row,
+  Col,
   Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
   Form,
   FormGroup,
   Label,
   Input,
-  NavLink,
   Alert
 } from 'reactstrap';
 import { connect } from 'react-redux';
@@ -65,10 +64,15 @@ class LoginModal extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const { email, password } = this.state;
+    // clear alert
+    this.setState({
+      msg: null
+    })
+
+    const { username, password } = this.state;
 
     const user = {
-      email,
+      username,
       password
     };
 
@@ -77,47 +81,47 @@ class LoginModal extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <NavLink onClick={this.toggle} href='#'>
-          Login
-        </NavLink>
+    let alert;
+    if (this.state.msg != null) {
+      alert = <Alert color="danger">{this.state.msg}</Alert>
+    } else {
+      alert = null;
+    }
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Login</ModalHeader>
-          <ModalBody>
-            {this.state.msg ? (
-              <Alert color='danger'>{this.state.msg}</Alert>
-            ) : null}
+    return (
+      <Container>
+        <Row>
+          <Col md={{ size: 4, offset: 4 }}>
+            {alert}
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for='email'>Email</Label>
+                <Label for='username'>Käyttäjänimi</Label>
                 <Input
-                  type='email'
-                  name='email'
-                  id='email'
-                  placeholder='Email'
-                  className='mb-3'
+                  type='text'
+                  name='username'
+                  id='username'
+                  placeholder='Käyttäjänimi'
+                  className='input-sm'
                   onChange={this.onChange}
                 />
 
-                <Label for='password'>Password</Label>
+                <Label for='password'>Salasana</Label>
                 <Input
                   type='password'
                   name='password'
                   id='password'
-                  placeholder='Password'
-                  className='mb-3'
+                  placeholder='Salasana'
+                  className='input-sm'
                   onChange={this.onChange}
                 />
                 <Button color='dark' style={{ marginTop: '2rem' }} block>
-                  Login
+                  Kirjaudu sisään
                 </Button>
               </FormGroup>
             </Form>
-          </ModalBody>
-        </Modal>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
