@@ -11,7 +11,8 @@ const Event = require('../../models/Event');
 router.get('/', (req, res) => {
   Event.find()
     .sort({ date: -1 })
-    .then(events => res.json(event));
+    .then(event => res.json(event))
+    .catch(err => res.status(404).json({success: false}));
 });
 
 // @route   POST api/events

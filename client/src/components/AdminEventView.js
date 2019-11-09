@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EventModal from './EventModal'
+import EventList from './EventList'
 
 class AdminEventView extends Component {
 
@@ -7,6 +8,7 @@ class AdminEventView extends Component {
         return (
             <div>
                 <EventModal />
+                <EventList />
             </div>
         );
     }

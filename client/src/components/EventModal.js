@@ -69,7 +69,6 @@ class EventModal extends Component {
   }
 
   onSubmit = e => {
-    const { error } = this.props;
     e.preventDefault();
 
     const newEvent = {
@@ -95,7 +94,7 @@ class EventModal extends Component {
   render() {
     let alert;
     const { status } = this.props.event;
-    if (status == 200) {
+    if (status === 200) {
       alert = <Alert color="success">Tapahtuma lisättiin onnistuneesti!</Alert>
     } else if (this.state.errorMsg != null) {
       alert = <Alert color="danger">{this.state.errorMsg}</Alert>
