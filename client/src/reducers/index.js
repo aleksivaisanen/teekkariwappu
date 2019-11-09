@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import itemReducer from './itemReducer';
+import eventReducer from './eventReducer';
 import errorReducer from './errorReducer';
 import authReducer from './authReducer';
 
 export default combineReducers({
-  item: itemReducer,
+  event: eventReducer,
   error: errorReducer,
   auth: authReducer
 });

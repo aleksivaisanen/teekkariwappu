@@ -3,34 +3,34 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 
 // Item Model
-const Item = require('../../models/Item');
+const Event = require('../../models/Event');
 
 // @route   GET api/items
 // @desc    Get All Items
 // @access  Public
 router.get('/', (req, res) => {
-  Item.find()
+  Event.find()
     .sort({ date: -1 })
-    .then(items => res.json(items));
+    .then(events => res.json(event));
 });
 
 // @route   POST api/items
 // @desc    Create An Item
 // @access  Private
 router.post('/', auth, (req, res) => {
-  const newItem = new Item({
+  const newEvent = new Event({
     name: req.body.name
   });
 
-  newItem.save().then(item => res.json(item));
+  newEvent.save().then(event => res.json(event));
 });
 
 // @route   DELETE api/items/:id
 // @desc    Delete A Item
 // @access  Private
 router.delete('/:id', auth, (req, res) => {
-  Item.findById(req.params.id)
-    .then(item => item.remove().then(() => res.json({ success: true })))
+  Event.findById(req.params.id)
+    .then(event => event.remove().then(() => res.json({ success: true })))
     .catch(err => res.status(404).json({ success: false }));
 });
 

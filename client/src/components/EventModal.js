@@ -10,10 +10,10 @@ import {
   Input
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/itemActions';
+import { addEvent } from '../actions/eventActions';
 import PropTypes from 'prop-types';
 
-class ItemModal extends Component {
+class EventModal extends Component {
   state = {
     modal: false,
     name: ''
@@ -88,11 +88,11 @@ class ItemModal extends Component {
 }
 
 const mapStateToProps = state => ({
-  item: state.item,
+  event: state.event,
   isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(
   mapStateToProps,
-  { addItem }
-)(ItemModal);
+  { addEvent }
+)(EventModal);
