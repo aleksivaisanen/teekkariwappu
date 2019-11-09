@@ -5,7 +5,7 @@ const auth = require('../../middleware/auth');
 // Item Model
 const Event = require('../../models/Event');
 
-// @route   GET api/items
+// @route   GET api/events
 // @desc    Get All Items
 // @access  Public
 router.get('/', (req, res) => {
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     .then(events => res.json(event));
 });
 
-// @route   POST api/items
+// @route   POST api/events
 // @desc    Create An Item
 // @access  Private
 router.post('/', auth, (req, res) => {
@@ -25,7 +25,7 @@ router.post('/', auth, (req, res) => {
   newEvent.save().then(event => res.json(event));
 });
 
-// @route   DELETE api/items/:id
+// @route   DELETE api/events/:id
 // @desc    Delete A Item
 // @access  Private
 router.delete('/:id', auth, (req, res) => {

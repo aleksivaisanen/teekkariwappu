@@ -1,5 +1,5 @@
-const dotenv = require('dotenv');
 // Allow the use of .env variables
+const dotenv = require('dotenv');
 dotenv.config();
 
 const express = require('express');

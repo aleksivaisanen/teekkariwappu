@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import {
+  Nav,
   Navbar,
   NavbarBrand,
   NavItem,
@@ -7,7 +8,6 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LoginModal from './auth/Login';
 import Logout from './auth/Logout';
 
 class AppNavbar extends Component {
@@ -26,11 +26,10 @@ class AppNavbar extends Component {
   };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const isAuthenticated = this.props.auth.isAuthenticated;
 
     const authLinks = (
       <Fragment>
-
         <NavItem>
           <Logout />
         </NavItem>
@@ -42,7 +41,9 @@ class AppNavbar extends Component {
         <Navbar color='dark' dark expand='sm' className='mb-5'>
           <Container>
             <NavbarBrand href='/'>teekkariwappu.fi</NavbarBrand>
-
+            <Nav className='ml-auto' navbar>
+              {isAuthenticated ? authLinks : null}
+            </Nav>
           </Container>
         </Navbar>
       </div>

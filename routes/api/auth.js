@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
 
   // Simple validation
   if (!username || !password) {
-    return res.status(400).json({ msg: 'Täytä kaikki kentät!' });
+    return res.status(404).json({ msg: 'Täytä kaikki kentät!' });
   }
 
   // Check for existing user
@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
       // Validate password
       bcrypt.compare(password, user.password)
         .then(isMatch => {
-          if (!isMatch) return res.status(400).json({ msg: 'Tarkista salasana.' });
+          if (!isMatch) return res.status(404).json({ msg: 'Tarkista salasana.' });
 
           jwt.sign(
             { id: user.id },
