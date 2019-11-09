@@ -36,12 +36,12 @@ class EventModal extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const newItem = {
+    const newEvent = {
       name: this.state.name
     };
 
-    // Add item via addItem action
-    this.props.addItem(newItem);
+    // Add event via addEvent action
+    this.props.addEvent(newEvent);
 
     // Close modal
     this.toggle();
@@ -59,8 +59,8 @@ class EventModal extends Component {
             Add Item
           </Button>
         ) : (
-          <h4 className='mb-3 ml-4'>Please log in to manage items</h4>
-        )}
+            <h4 className='mb-3 ml-4'>Please log in to manage items</h4>
+          )}
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Add To Shopping List</ModalHeader>

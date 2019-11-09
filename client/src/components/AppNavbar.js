@@ -38,7 +38,7 @@ class AppNavbar extends Component {
 
     return (
       <div>
-        <Navbar color='dark' dark expand='sm' className='mb-5'>
+        <Navbar color='dark' dark expand='sm' className='mb-3'>
           <Container>
             <NavbarBrand href='/'>teekkariwappu.fi</NavbarBrand>
             <Nav className='ml-auto' navbar>

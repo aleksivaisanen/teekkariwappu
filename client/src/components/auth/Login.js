@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
 import { login } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
 
-class LoginModal extends Component {
+class Login extends Component {
   state = {
     modal: false,
     email: '',
@@ -134,4 +134,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { login, clearErrors }
-)(LoginModal);
+)(Login);

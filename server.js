@@ -31,7 +31,7 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
-app.use('/api/event', require('./routes/api/events'));
+app.use('/api/events', require('./routes/api/events'));
 app.use('/api/auth', require('./routes/api/auth'));
 
 // registering new users is not in use currently

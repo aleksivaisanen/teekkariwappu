@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Login from './auth/Login'
+import AdminEventView from './AdminEventView';
 
 class MainView extends Component {
     static propTypes = {
@@ -13,7 +14,7 @@ class MainView extends Component {
 
         let mainView;
         if (isAuthenticated) {
-            mainView = <div>test</div>
+            mainView = <AdminEventView />
         } else {
             mainView = <Login />
         }
