@@ -8,7 +8,7 @@ class EventList extends Component {
         super(props);
         this.toggle = this.toggle.bind(this);
         this.state = {
-            collapse: 0,
+            collapse: null,
         };
     }
 
@@ -18,7 +18,7 @@ class EventList extends Component {
 
     toggle(e) {
         let event = e.target.dataset.event;
-        this.setState({ collapse: this.state.collapse === Number(event) ? 0 : Number(event) });
+        this.setState({ collapse: this.state.collapse === Number(event) ? null : Number(event) });
     }
 
     render() {
