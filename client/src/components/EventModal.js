@@ -138,7 +138,7 @@ class EventModal extends Component {
                   id='place'
                   onChange={this.onChange}
                 />
-                <Label for='enrolLink'>Ilmoittautumislinkki</Label>
+                <Label for='enrolLink'>Ilmoittautumislinkki (Kirjoita linkki kokonaisuudessaan, https:// mukaan luettuna!)</Label>
                 <Input
                   type='text'
                   name='enrolLink'

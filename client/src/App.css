@@ -31,3 +31,17 @@
 .react-datetime-picker__wrapper {
   border: none;
 }
+
+/* Bootstrap overrides */
+.card-header {
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-footer {
+  background: none;
+}
