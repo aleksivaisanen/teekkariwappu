@@ -31,11 +31,19 @@ export default function (state = initialState, action) {
         status: action.status
       };
     case EDIT_EVENT:
-        return {
-          ...state,
-          events: Object.assign([], ...state.events, action.payload),
-          status: action.status
-        };
+      const newEvents = state.events.map(event => {
+        if (event._id === action.payload._id) {
+          return Object.assign(event, action.payload)
+        }
+        return event
+      })
+
+      console.log("newEvents", newEvents)
+      return {
+        ...state,
+        events: newEvents,
+        status: action.status
+      };
     case EVENTS_LOADING:
       return {
         ...state,

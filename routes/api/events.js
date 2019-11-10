@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
   Event.find()
     .sort({ date: -1 })
     .then(event => res.json(event))
-    .catch(err => res.status(404).json({success: false}));
+    .catch(err => res.status(404).json({ success: false }));
 });
 
 // @route PUT api/events/:id
@@ -20,16 +20,17 @@ router.get('/', (req, res) => {
 // @access Private
 router.put('/:id', auth, (req, res) => {
   Event.findOneAndUpdate(
-    {_id: req.params.id}, 
+    { _id: req.params.id },
     {
       name: req.body.name,
       date: req.body.date,
       place: req.body.place,
       enrolLink: req.body.enrolLink,
       description: req.body.description
-    })
+    },
+    { new: true })
     .then(event => res.json(event))
-    .catch(err => Response.status(400).json({success: false}))
+    .catch(err => Response.status(400).json({ success: false }))
 })
 
 // @route   POST api/events

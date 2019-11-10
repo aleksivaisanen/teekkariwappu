@@ -34,7 +34,6 @@ export const addEvent = event => (dispatch, getState) => {
 };
 
 export const editEvent = event => (dispatch, getState) => {
-  console.log(event)
   axios
     .put(`/api/events/${event._id}`, event, tokenConfig(getState))
     .then(res =>
