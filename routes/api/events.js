@@ -15,6 +15,23 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({success: false}));
 });
 
+// @route PUT api/events/:id
+// @desc Update Event by Id
+// @access Private
+router.put('/:id', auth, (req, res) => {
+  Event.findOneAndUpdate(
+    {_id: req.params.id}, 
+    {
+      name: req.body.name,
+      date: req.body.date,
+      place: req.body.place,
+      enrolLink: req.body.enrolLink,
+      description: req.body.description
+    })
+    .then(event => res.json(event))
+    .catch(err => Response.status(400).json({success: false}))
+})
+
 // @route   POST api/events
 // @desc    Create An Event
 // @access  Private

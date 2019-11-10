@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Collapse, CardBody, Card, CardHeader, CardFooter } from 'reactstrap';
+import EventModal from './EventModal';
 
 class EventListItem extends Component {
     static propTypes = {
@@ -14,6 +15,14 @@ class EventListItem extends Component {
         return (
             <Card key={event._id.toString()}>
                 <CardHeader onClick={toggle} data-event={event._id.toString()}>
+                    {window.location.href.includes('/admin') &&
+                        <EventModal
+                            buttonText="Muokkaa"
+                            heading="Muokkaa tapahtumaa"
+                            currentEvent={event}
+                            alertEnabled={false}
+                        />
+                    }
                     <Row>
                         <Col sm={2} xs={4}>
                             {new Intl.DateTimeFormat('fi-FI',

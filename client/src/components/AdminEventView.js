@@ -7,7 +7,10 @@ class AdminEventView extends Component {
     render() {
         return (
             <div>
-                <EventModal />
+                <EventModal
+                    buttonText="Lisää tapahtuma"
+                    heading="Lisää tapahtuma"
+                 />
                 <EventList />
             </div>
         );

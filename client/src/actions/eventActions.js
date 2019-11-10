@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_EVENTS, ADD_EVENT, DELETE_EVENT, EVENTS_LOADING } from './types';
+import { GET_EVENTS, ADD_EVENT, EDIT_EVENT, DELETE_EVENT, EVENTS_LOADING } from './types';
 import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';
 
@@ -18,12 +18,28 @@ export const getEvents = () => dispatch => {
     );
 };
 
-export const addEvent = item => (dispatch, getState) => {
+export const addEvent = event => (dispatch, getState) => {
   axios
-    .post('/api/events', item, tokenConfig(getState))
+    .post('/api/events', event, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: ADD_EVENT,
+        payload: res.data,
+        status: res.status
+      })
+    )
+    .catch(err =>
+      dispatch(returnErrors(err.response.data, err.response.status))
+    );
+};
+
+export const editEvent = event => (dispatch, getState) => {
+  console.log(event)
+  axios
+    .put(`/api/events/${event._id}`, event, tokenConfig(getState))
+    .then(res =>
+      dispatch({
+        type: EDIT_EVENT,
         payload: res.data,
         status: res.status
       })

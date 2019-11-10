@@ -1,6 +1,7 @@
 import {
   GET_EVENTS,
   ADD_EVENT,
+  EDIT_EVENT,
   DELETE_EVENT,
   EVENTS_LOADING
 } from '../actions/types';
@@ -29,6 +30,12 @@ export default function (state = initialState, action) {
         events: [action.payload, ...state.events],
         status: action.status
       };
+    case EDIT_EVENT:
+        return {
+          ...state,
+          events: Object.assign([], ...state.events, action.payload),
+          status: action.status
+        };
     case EVENTS_LOADING:
       return {
         ...state,

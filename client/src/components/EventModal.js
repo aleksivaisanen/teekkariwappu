@@ -11,7 +11,7 @@ import {
   Alert
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addEvent } from '../actions/eventActions';
+import { addEvent, editEvent } from '../actions/eventActions';
 import DateTimePicker from 'react-datetime-picker';
 import PropTypes from 'prop-types';
 import { clearErrors } from '../actions/errorActions';
@@ -19,6 +19,7 @@ import { clearErrors } from '../actions/errorActions';
 class EventModal extends Component {
   state = {
     modal: false,
+    _id: null,
     name: '',
     date: new Date(),
     place: '',
@@ -30,7 +31,11 @@ class EventModal extends Component {
   static propTypes = {
     isAuthenticated: PropTypes.bool,
     error: PropTypes.object.isRequired,
-    clearErrors: PropTypes.func.isRequired
+    clearErrors: PropTypes.func.isRequired,
+    buttonText: PropTypes.string,
+    heading: PropTypes.string,
+    currentEvent: PropTypes.object,
+    alertEnabled: PropTypes.bool
   };
 
   componentDidUpdate(prevProps) {
@@ -46,6 +51,7 @@ class EventModal extends Component {
   }
 
   toggle = () => {
+    const { currentEvent } = this.props;
     if (this.state.modal) {
       const conf = window.confirm('Haluatko poistua tallentamatta tapahtuman tietoja?');
       if (conf) {
@@ -53,10 +59,19 @@ class EventModal extends Component {
           modal: !this.state.modal
         });
       }
-    } else {
+    } else if (currentEvent) {
       this.setState({
-        modal: !this.state.modal
+        modal: !this.state.modal,
+        _id: currentEvent._id,
+        name: currentEvent.name,
+        date: new Date(currentEvent.date),
+        place: currentEvent.place,
+        enrolLink: currentEvent.enrolLink,
+        description: currentEvent.description
       });
+    }
+    else {
+      this.setState({ modal: !this.state.modal })
     }
   };
 
@@ -76,15 +91,21 @@ class EventModal extends Component {
       date: this.state.date,
       place: this.state.place,
       enrolLink: this.state.enrolLink,
-      description: this.state.description
+      description: this.state.description,
     };
 
     // clear errors
     this.props.clearErrors();
 
-    // Add event via addEvent action
-    this.props.addEvent(newEvent);
-
+    // if id is given, update the current event
+    if(this.state._id !== null) {
+      newEvent._id = this.state._id
+      this.props.editEvent(newEvent)
+    } else {
+      // else add a new event via addEvent action
+      this.props.addEvent(newEvent);
+    }
+    
     // Close modal
     this.setState({
       modal: !this.state.modal
@@ -104,16 +125,15 @@ class EventModal extends Component {
 
     return (
       <div>
-        {alert}
+        {this.props.alertEnabled !== false && alert}
         <Button
           color='dark'
-          style={{ marginBottom: '2rem' }}
           onClick={this.toggle}
         >
-          Lisää tapahtuma
-          </Button>
+          {this.props.buttonText}
+        </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} backdrop="static">
-          <ModalHeader toggle={this.toggle}>Lisää tapahtuma</ModalHeader>
+          <ModalHeader toggle={this.toggle}>{this.props.heading}</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
@@ -123,6 +143,7 @@ class EventModal extends Component {
                   name='name'
                   id='name'
                   onChange={this.onChange}
+                  value={this.state.name}
                 />
                 <Label for='date'>Milloin tapahtuma on?</Label>
                 <DateTimePicker
@@ -137,6 +158,7 @@ class EventModal extends Component {
                   name='place'
                   id='place'
                   onChange={this.onChange}
+                  value={this.state.place}
                 />
                 <Label for='enrolLink'>Ilmoittautumislinkki (Kirjoita linkki kokonaisuudessaan, https:// mukaan luettuna!)</Label>
                 <Input
@@ -144,6 +166,7 @@ class EventModal extends Component {
                   name='enrolLink'
                   id='enrolLink'
                   onChange={this.onChange}
+                  value={this.state.enrolLink}
                 />
                 <Label for='description'>Tapahtuman kuvaus</Label>
                 <Input
@@ -151,10 +174,11 @@ class EventModal extends Component {
                   name='description'
                   id='description'
                   onChange={this.onChange}
+                  value={this.state.description}
                   rows={4}
                 />
                 <Button color='dark' style={{ marginTop: '2rem' }} block>
-                  Lisää tapahtuma
+                  Tallenna
                 </Button>
               </FormGroup>
             </Form>
@@ -173,5 +197,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addEvent, clearErrors }
+  { addEvent, editEvent, clearErrors }
 )(EventModal);
