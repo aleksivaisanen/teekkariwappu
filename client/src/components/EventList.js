@@ -17,6 +17,28 @@ class EventList extends Component {
         this.props.getEvents();
     }
 
+    // helper function for checking if the date is today
+    isToday(someDate) {
+        const today = new Date()
+        return someDate.getDate() === today.getDate() &&
+            someDate.getMonth() === today.getMonth() &&
+            someDate.getFullYear() === today.getFullYear()
+    }
+
+    // helper function for checking if the date is in the past (yesterday or older)
+    isPast(someDate) {
+        const today = new Date()
+        today.setHours(0, 0, 0, 0)
+        return someDate.getDate() < today.getDate()
+    }
+
+    // helper function for checking if the date is in the future (tomorrow or more)
+    isFuture(someDate) {
+        const today = new Date()
+        today.setHours(24, 0, 0, 0)
+        return someDate.getDate() >= today.getDate();
+    }
+
     // helper function for travelling the DOM tree to find the correct parent
     getClosest(elem, selector) {
         for (; elem && elem !== document; elem = elem.parentNode) {
@@ -38,18 +60,50 @@ class EventList extends Component {
     render() {
         const { collapse } = this.state;
         const { events } = this.props;
+
         events.sort((a, b) => new Date(a.date) - new Date(b.date))
+        const pastEvents = events.filter(event => { return this.isPast(new Date(event.date)) })
+        const currentEvents = events.filter(event => { return this.isToday(new Date(event.date)) })
+        const futureEvents = events.filter(event => { return this.isFuture(new Date(event.date)) })
+
         return (
             <Container>
-                <h3 className="text-center">Tapahtumat</h3>
-                {events.map((event) =>
-                    <EventListItem
-                        key={event._id.toString()}
-                        event={event}
-                        collapse={collapse}
-                        toggle={this.toggle}
-                    />
-                )}
+                {currentEvents.length > 0 &&
+                    <h3 className="text-center my-3">Tapahtuma(t) tänään</h3>
+                }
+                {currentEvents.length > 0 &&
+                    currentEvents.map((event) =>
+                        <EventListItem
+                            key={event._id.toString()}
+                            event={event}
+                            collapse={collapse}
+                            toggle={this.toggle}
+                        />)
+                }
+                {futureEvents.length > 0 &&
+                    <h3 className="text-center my-3">Tulevat tapahtumat</h3>
+                }
+                {futureEvents.length > 0 &&
+                    futureEvents.map((event) =>
+                        <EventListItem
+                            key={event._id.toString()}
+                            event={event}
+                            collapse={collapse}
+                            toggle={this.toggle}
+                        />)
+                }
+                {pastEvents.length > 0 &&
+                    <h3 className="text-center my-3">Menneet tapahtumat</h3>
+                }
+                {pastEvents.length > 0 &&
+                    pastEvents.map((event) =>
+                        <EventListItem
+                            key={event._id.toString()}
+                            event={event}
+                            collapse={collapse}
+                            toggle={this.toggle}
+                        />)
+                }
             </Container>
         );
     }
