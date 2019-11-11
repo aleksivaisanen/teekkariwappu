@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Collapse, CardBody, Card, CardHeader, CardFooter } from 'reactstrap';
 import EventModal from './EventModal';
+import DeleteEventButton from './DeleteEventButton';
 
 class EventListItem extends Component {
     static propTypes = {
@@ -15,14 +16,6 @@ class EventListItem extends Component {
         return (
             <Card key={event._id.toString()}>
                 <CardHeader onClick={toggle} data-event={event._id.toString()}>
-                    {window.location.href.includes('/admin') &&
-                        <EventModal
-                            buttonText="Muokkaa"
-                            heading="Muokkaa tapahtumaa"
-                            currentEvent={event}
-                            alertEnabled={false}
-                        />
-                    }
                     <Row>
                         <Col sm={2} xs={4}>
                             {new Intl.DateTimeFormat('fi-FI',
@@ -54,6 +47,19 @@ class EventListItem extends Component {
                     {event.enrolLink !== "" &&
                         <CardFooter>
                             <b><a href={event.enrolLink}>Ilmoittaudu tapahtumaan tästä!</a></b>
+                        </CardFooter>
+                    }
+                    {window.location.href.includes('/admin') &&
+                        <CardFooter>
+                            <EventModal
+                                type="edit"
+                                currentEvent={event}
+                                alertEnabled={false}
+                                containerClass="edit-eventmodal"
+                            />
+                            <DeleteEventButton 
+                                eventId={event._id}
+                            />
                         </CardFooter>
                     }
                 </Collapse>

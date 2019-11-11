@@ -21,12 +21,15 @@ export const getEvents = () => dispatch => {
 export const addEvent = event => (dispatch, getState) => {
   axios
     .post('/api/events', event, tokenConfig(getState))
-    .then(res =>
+    .then(res => {
       dispatch({
         type: ADD_EVENT,
         payload: res.data,
-        status: res.status
+        status: res.status,
+        msg: res.data.msg
       })
+      console.log(res)
+    }
     )
     .catch(err =>
       dispatch(returnErrors(err.response.data, err.response.status))
@@ -40,7 +43,8 @@ export const editEvent = event => (dispatch, getState) => {
       dispatch({
         type: EDIT_EVENT,
         payload: res.data,
-        status: res.status
+        status: res.status,
+        msg: res.data.msg
       })
     )
     .catch(err =>
@@ -54,7 +58,9 @@ export const deleteEvent = id => (dispatch, getState) => {
     .then(res =>
       dispatch({
         type: DELETE_EVENT,
-        payload: id
+        payload: id,
+        status: res.status,
+        msg: res.data.msg
       })
     )
     .catch(err =>

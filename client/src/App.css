@@ -20,6 +20,11 @@
   transition: opacity 1000ms ease-in;
 }
 
+.edit-eventmodal {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
 /* DateTime picker styles */
 .react-datetime-picker {
   display: block;

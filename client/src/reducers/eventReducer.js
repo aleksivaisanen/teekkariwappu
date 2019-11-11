@@ -22,13 +22,16 @@ export default function (state = initialState, action) {
     case DELETE_EVENT:
       return {
         ...state,
-        events: state.events.filter(event => event._id !== action.payload)
+        events: state.events.filter(event => event._id !== action.payload),
+        status: action.status,
+        msg: action.msg
       };
     case ADD_EVENT:
       return {
         ...state,
         events: [action.payload, ...state.events],
-        status: action.status
+        status: action.status,
+        msg: action.msg
       };
     case EDIT_EVENT:
       const newEvents = state.events.map(event => {
@@ -37,12 +40,11 @@ export default function (state = initialState, action) {
         }
         return event
       })
-
-      console.log("newEvents", newEvents)
       return {
         ...state,
         events: newEvents,
-        status: action.status
+        status: action.status,
+        msg: action.msg
       };
     case EVENTS_LOADING:
       return {

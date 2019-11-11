@@ -25,17 +25,17 @@ class EventModal extends Component {
     place: '',
     enrolLink: '',
     description: '',
-    errorMsg: null
+    errorMsg: null,
   };
 
   static propTypes = {
     isAuthenticated: PropTypes.bool,
     error: PropTypes.object.isRequired,
     clearErrors: PropTypes.func.isRequired,
-    buttonText: PropTypes.string,
-    heading: PropTypes.string,
     currentEvent: PropTypes.object,
-    alertEnabled: PropTypes.bool
+    alertEnabled: PropTypes.bool,
+    type: PropTypes.string,
+    containerClass: PropTypes.string
   };
 
   componentDidUpdate(prevProps) {
@@ -113,10 +113,21 @@ class EventModal extends Component {
   };
 
   render() {
+    let buttonText;
+    let headingText;
+    if(this.props.type === "edit") {
+      buttonText = "Muokkaa tapahtumaa"
+      headingText = "Muokkaa tapahtumaa"
+    } else if(this.props.type === "add") {
+      buttonText = "Lisää tapahtuma"
+      headingText = "Lisää tapahtuma"
+    }
+
     let alert;
-    const { status } = this.props.event;
+    const { status, msg } = this.props.event;
+    console.log(this.props.event)
     if (status === 200) {
-      alert = <Alert color="success">Tapahtuma lisättiin onnistuneesti!</Alert>
+      alert = <Alert color="success">{msg}</Alert>
     } else if (this.state.errorMsg != null) {
       alert = <Alert color="danger">{this.state.errorMsg}</Alert>
     } else {
@@ -124,16 +135,16 @@ class EventModal extends Component {
     }
 
     return (
-      <div>
+      <div className={this.props.containerClass}>
         {this.props.alertEnabled !== false && alert}
         <Button
           color='dark'
           onClick={this.toggle}
         >
-          {this.props.buttonText}
+          {buttonText}
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} backdrop="static">
-          <ModalHeader toggle={this.toggle}>{this.props.heading}</ModalHeader>
+          <ModalHeader toggle={this.toggle}>{headingText}</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>

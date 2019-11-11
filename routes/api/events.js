@@ -29,8 +29,8 @@ router.put('/:id', auth, (req, res) => {
       description: req.body.description
     },
     { new: true })
-    .then(event => res.json(event))
-    .catch(err => Response.status(400).json({ success: false }))
+    .then(event => res.json({ ...event._doc, msg: "Tapahtuma päivitettiin onnistuneesti!" }))
+    .catch(err => Response.status(400).json({ success: false, msg: "Tapahtuman päivittäminen epäonnistui" }))
 })
 
 // @route   POST api/events
@@ -46,9 +46,9 @@ router.post('/', auth, (req, res) => {
   });
 
   if (req.body.name == "") {
-    res.status(400).json({ msg: "Tapahtuman nimi ei saa olla tyhjä!" })
+    res.status(400).json({ success: false, msg: "Tapahtuman nimi ei saa olla tyhjä!" })
   } else {
-    newEvent.save().then(event => res.json(event));
+    newEvent.save().then(event => res.json({ ...event._doc, msg: "Tapahtuma tallennettiin onnistuneesti!" }));
   }
 });
 
@@ -57,8 +57,8 @@ router.post('/', auth, (req, res) => {
 // @access  Private
 router.delete('/:id', auth, (req, res) => {
   Event.findById(req.params.id)
-    .then(event => event.remove().then(() => res.json({ success: true })))
-    .catch(err => res.status(404).json({ success: false }));
+    .then(event => event.remove().then(() => res.json({ success: true, msg: "Tapahtuman poistaminen onnistui" })))
+    .catch(err => res.status(404).json({ success: false, msg: "Tapahtuman poistaminen ei onnistunut" }));
 });
 
 module.exports = router;
