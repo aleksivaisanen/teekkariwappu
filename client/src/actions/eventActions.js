@@ -28,7 +28,6 @@ export const addEvent = event => (dispatch, getState) => {
         status: res.status,
         msg: res.data.msg
       })
-      console.log(res)
     }
     )
     .catch(err =>

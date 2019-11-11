@@ -125,7 +125,6 @@ class EventModal extends Component {
 
     let alert;
     const { status, msg } = this.props.event;
-    console.log(this.props.event)
     if (status === 200) {
       alert = <Alert color="success">{msg}</Alert>
     } else if (this.state.errorMsg != null) {
