@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
-import MainView from './components/MainView'
+import AdminMainView from './components/AdminMainView'
 import { Container } from 'reactstrap';
 
 import { Provider } from 'react-redux';
@@ -15,6 +15,7 @@ import {
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import MainView from './components/MainView';
 
 class App extends Component {
 
@@ -32,14 +33,12 @@ class App extends Component {
               <div className='App'>
                 <AppNavbar />
                 <Container>
-                  <MainView />
+                  <AdminMainView />
                 </Container>
               </div>
             </Route>
             <Route path="/">
-              <div>
-                under construction
-              </div>
+              <MainView/>
             </Route>
           </Switch>
         </Router>
