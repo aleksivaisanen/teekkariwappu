@@ -68,6 +68,9 @@ class EventList extends Component {
 
         return (
             <Container>
+                {events.length === 0 && 
+                    <h3 className="text-center my-3">Ei tapahtumia!</h3>
+                }
                 {currentEvents.length > 0 &&
                     <h3 className="text-center my-3">Tapahtuma(t) tänään</h3>
                 }
