@@ -107,6 +107,7 @@ class EventList extends Component {
                             toggle={this.toggle}
                         />)
                 }
+                <br/>
             </Container>
         );
     }

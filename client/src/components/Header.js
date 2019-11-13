@@ -8,8 +8,14 @@ class Header extends Component {
             <div>
                 <Jumbotron fluid>
                     <Container>
-                        <h1>TURUN TEEKKARIWAPPU</h1>
+                        <h1 className="text-center">TURUN TEEKKARIWAPPU</h1>
                         <CounterToWappu />
+                        <p className="text-center">
+                            #turunwappu
+                        </p>
+                        <p className="text-center">
+                            <b><a href="https://digit.fi">Digit</a></b> & <b><a href="https://www.nucleus.fi">Nucleus</a></b>
+                        </p>
                     </Container>
                 </Jumbotron>
             </div>

@@ -25,6 +25,10 @@
   margin: 0 1rem;
 }
 
+a {
+  color: white;
+}
+
 /* DateTime picker styles */
 .react-datetime-picker {
   display: block;
@@ -67,7 +71,6 @@
 
 .jumbotron-fluid > .container > h1 {
   padding-top: 1rem;
-  text-align: center;
   font-size: 5rem;
 }
 
