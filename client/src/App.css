@@ -50,3 +50,33 @@
 .card-footer {
   background: none;
 }
+
+.jumbotron-fluid {
+  background-image: url('./images/wappumakiedit.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron-fluid > .container {
+  min-height: 500px;
+  margin: 50px auto;
+  color: white;
+}
+
+.jumbotron-fluid > .container > h1 {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 5rem;
+}
+
+.countdown-container {
+  text-align: center;
+}
+
+.countdown-container > span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 4rem;
+}
