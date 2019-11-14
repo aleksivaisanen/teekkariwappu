@@ -78,8 +78,50 @@ a {
   text-align: center;
 }
 
-.countdown-container > span {
+.countdown-container > div {
   display: inline-block;
   vertical-align: middle;
   font-size: 4rem;
+}
+
+.coming-soon {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 1.1;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 15px
+}
+
+.counter-number {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 8rem;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.counter-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.wsize1 {
+  width: 195px;
+}
+
+@media only screen and (max-width: 769px) {
+  .counter-number {
+    font-size: 6rem;
+  }
+  .jumbotron-fluid > .container > h1 {
+    padding-top: 1rem;
+    font-size: 2rem;
+  }
 }
