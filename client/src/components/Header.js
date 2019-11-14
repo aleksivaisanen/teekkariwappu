@@ -10,11 +10,15 @@ class Header extends Component {
                     <Container>
                         <h1 className="text-center">TURUN TEEKKARIWAPPU</h1>
                         <CounterToWappu />
-                        <p className="text-center">
-                            #turunwappu
+                        <p className="text-center medium-font">
+                            <i>#turunwappu</i>
                         </p>
-                        <p className="text-center">
-                            <b><a href="https://digit.fi">Digit</a></b> & <b><a href="https://www.nucleus.fi">Nucleus</a></b>
+                        <p className="text-center medium-font">
+                            Presented by<br/>
+                            <b><a href="https://digit.fi">Digit</a></b> & <b><a href="https://www.nucleus.fi">Nucleus</a></b><br/>
+                            <span className="menossa-mukana">
+                            Menossa mukana myös <b><a href="http://teekkarikomissio.utu.fi/fi/index.html">Teekkarikomissio</a></b> & <b><a href="https://www.asteriski.fi">Asteriski</a></b>
+                            </span>
                         </p>
                     </Container>
                 </Jumbotron>

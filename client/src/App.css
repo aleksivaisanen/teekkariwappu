@@ -29,6 +29,11 @@ a {
   color: white;
 }
 
+a:hover {
+  color: #d4af37;
+  text-decoration: none;
+}
+
 /* DateTime picker styles */
 .react-datetime-picker {
   display: block;
@@ -116,6 +121,18 @@ a {
   width: 195px;
 }
 
+.medium-font {
+  font-size: 2rem;
+}
+
+.menossa-mukana br {
+  line-height: 50%;
+}
+
+.menossa-mukana {
+  font-size: 1rem;
+  line-height: 0.5;
+}
 @media only screen and (max-width: 769px) {
   .counter-number {
     font-size: 6rem;
