@@ -5,13 +5,13 @@ import SkewedContainer from 'sc-react';
 class VideoComponent extends Component {
     render() {
         return (
-            <SkewedContainer className="video-component-container py-5" top="right" bgColor="#d4af37" >
+            <SkewedContainer className="video-component-container py-5" top="right" bgColor="#FED22A" >
                 <div className="wappuvideo-container">
-                    <iframe src="https://www.youtube.com/embed/RJ9E6zQFzCM"  
+                    <iframe src="https://www.youtube.com/embed/RJ9E6zQFzCM"
                         title="Wappuvideo"
                         className="wappuvideo"
                         frameBorder="0"
-                        allowFullScreen>    
+                        allowFullScreen>
                     </iframe>
                 </div>
             </SkewedContainer>
