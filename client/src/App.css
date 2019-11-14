@@ -60,12 +60,13 @@ a:hover {
   background: none;
 }
 
+.jumbotron {
+  background: none;
+}
+
 .jumbotron-fluid {
-  background-image: url('./images/wappumakiedit.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
   font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0;
 }
 
 .jumbotron-fluid > .container {
@@ -133,6 +134,35 @@ a:hover {
   font-size: 1rem;
   line-height: 0.5;
 }
+
+.video-component-container {
+  background-color: #d4af37 !important;
+  
+}
+
+.wappuvideo-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.wappuvideo {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: calc(100% - 60px);
+  height: 100%;
+}
+
+.header-class {
+  background-image: url('./images/wappumakiedit.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 @media only screen and (max-width: 769px) {
   .counter-number {
     font-size: 6rem;
@@ -140,5 +170,13 @@ a:hover {
   .jumbotron-fluid > .container > h1 {
     padding-top: 1rem;
     font-size: 2rem;
+  }
+
+  .wappuvideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
