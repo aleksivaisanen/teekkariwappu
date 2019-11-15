@@ -8,11 +8,15 @@ const path = require('path');
 const config = require('config');
 const dataInitializer = require('./dataInitializer.js');
 const helmet = require('helmet')
+const secure = require('express-force-https')
 
 const app = express();
 
 // use helmet to set various HTTP headers to protect the app
 app.use(helmet())
+
+// force https
+app.use(secure)
 
 // Bodyparser Middleware
 app.use(express.json());
