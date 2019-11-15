@@ -29,14 +29,14 @@ class EventList extends Component {
     isPast(someDate) {
         const today = new Date()
         today.setHours(0, 0, 0, 0)
-        return someDate.getDate() < today.getDate()
+        return someDate.getTime() < today.getTime()
     }
 
     // helper function for checking if the date is in the future (tomorrow or more)
     isFuture(someDate) {
         const today = new Date()
         today.setHours(24, 0, 0, 0)
-        return someDate.getDate() >= today.getDate();
+        return someDate.getTime() >= today.getTime()
     }
 
     // helper function for travelling the DOM tree to find the correct parent
