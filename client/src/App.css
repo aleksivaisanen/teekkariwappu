@@ -126,10 +126,6 @@ a:hover, .card-footer a:hover {
   text-transform: uppercase;
 }
 
-.wsize1 {
-  width: 195px;
-}
-
 .medium-font {
   font-size: 2rem;
 }
@@ -199,10 +195,24 @@ a:hover, .card-footer a:hover {
   font-weight: 600;
 }
 
+.wappu-counter-item {
+  width: 195px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 @media only screen and (max-width: 769px) {
   .counter-number {
     font-size: 4rem;
   }
+
+  .wappu-counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .jumbotron-fluid > .container > h1 {
     padding-top: 1rem;
     font-size: 2rem;
@@ -215,4 +225,5 @@ a:hover, .card-footer a:hover {
     width: 100%;
     height: 100%;
   }
+
 }
