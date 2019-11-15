@@ -14,7 +14,7 @@ class Footer extends Component {
                     <Row>
                         <Col md={6} className="d-flex flex-row justify-content-center align-items-end">
                             <img className="guild-logo" src={digit} alt="Digit ry"/>
-                            <div className="d-flex flex-column justify-content-left">
+                            <div className="d-flex flex-column justify-content-left" style={{width: '170px'}}>
                                 <div className="d-flex flex-row justify-content-left align-items-center">
                                     <a href="https://fi-fi.facebook.com/digitry/" className="social-media-link">
                                         <img className="social-media" src={fb} alt="Digit ry Facebook" /> @digitry    
@@ -34,7 +34,7 @@ class Footer extends Component {
                         </Col>
                         <Col md={6} className="d-flex flex-row justify-content-center align-items-end">
                             <img className="guild-logo" src={nucleus} alt="Nucleus ry"/>
-                            <div className="d-flex flex-column justify-content-left">
+                            <div className="d-flex flex-column justify-content-left" style={{width: '170px'}}>
                                 <div className="d-flex flex-row justify-content-left align-items-center">
                                     <a href="https://fi-fi.facebook.com/Nucleusry/" className="social-media-link">
                                         <img className="social-media" src={fb} alt="Nucleus ry Facebook" /> @Nucleusry

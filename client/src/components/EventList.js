@@ -67,7 +67,7 @@ class EventList extends Component {
         const futureEvents = events.filter(event => { return this.isFuture(new Date(event.date)) })
 
         return (
-            <Container className="my-5 pt-5">
+            <Container className="my-5 pt-5 eventlist-container">
                 {events.length === 0 &&
                     <h3 className="text-center my-3">Ei tapahtumia!</h3>
                 }
