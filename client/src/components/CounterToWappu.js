@@ -12,31 +12,40 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
         return null
     } else {
         // Render a countdown
+
+        const formattedDays = () => {
+            if (days > 9) {
+                return days
+            } else {
+                return ("0" + days).slice(-2)
+            }
+        }
+
         return (
             <div >
                 <h3 className="text-center coming-soon">
-                    Coming Soon
+                    Tulossa pian
 			</h3>
 
                 <Row className="justify-content-center align-items-center">
                     <Col sm={3} className="mb-2 wappu-counter-item">
-                        <span className="counter-number text-left">{days}</span>
-                        <span className="counter-text">Days</span>
+                        <span className="counter-number text-left">{formattedDays()}</span>
+                        <span className="counter-text">Päivää</span>
                     </Col>
 
                     <Col sm={3} className="mb-2 wappu-counter-item">
                         <span className="counter-number text-left">{("0" + hours).slice(-2)}</span>
-                        <span className="counter-text">Hours</span>
+                        <span className="counter-text">Tuntia</span>
                     </Col>
 
                     <Col sm={3} className="mb-2 wappu-counter-item">
                         <span className="counter-number text-left">{("0" + minutes).slice(-2)}</span>
-                        <span className="counter-text">Minutes</span>
+                        <span className="counter-text">Minuuttia</span>
                     </Col>
 
                     <Col sm={3} className="mb-2 wappu-counter-item">
                         <span className="counter-number text-left">{("0" + seconds).slice(-2)}</span>
-                        <span className="counter-text">Seconds</span>
+                        <span className="counter-text">Sekuntia</span>
                     </Col>
                 </Row>
             </div>
