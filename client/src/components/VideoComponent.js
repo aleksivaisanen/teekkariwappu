@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
 import SkewedContainer from 'sc-react';
 
 class VideoComponent extends Component {
@@ -11,7 +10,8 @@ class VideoComponent extends Component {
                         title="Wappuvideo"
                         className="wappuvideo"
                         frameBorder="0"
-                        allowFullScreen>
+                        allowFullScreen
+                        >
                     </iframe>
                 </div>
             </SkewedContainer>

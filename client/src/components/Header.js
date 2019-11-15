@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Jumbotron, Container } from 'reactstrap';
 import CounterToWappu from './CounterToWappu';
-import SkewedContainer from 'sc-react';
 
 class Header extends Component {
     render() {
         return (
-            <div class="header-class">
-                {/* <SkewedContainer className="header-class" bottom="left"> */}
+            <div className="header-class">
                 <Jumbotron fluid>
                     <Container>
                         <h1 className="text-center">TURUN TEEKKARIWAPPU</h1>
@@ -24,7 +22,6 @@ class Header extends Component {
                         </p>
                     </Container>
                 </Jumbotron>
-                {/*  </SkewedContainer> */}
             </div>
         );
     }
