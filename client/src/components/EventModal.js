@@ -59,7 +59,7 @@ class EventModal extends Component {
           modal: !this.state.modal
         });
       }
-    } else if (currentEvent) {
+    } else if (currentEvent && this.props.type !== "add") {
       this.setState({
         modal: !this.state.modal,
         _id: currentEvent._id,
