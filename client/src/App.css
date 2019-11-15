@@ -29,9 +29,13 @@ a {
   color: white;
 }
 
-a:hover {
+a:hover, .card-footer a:hover {
   color: #FED22A;
   text-decoration: none;
+}
+
+.card-footer a {
+  color: initial;
 }
 
 /* DateTime picker styles */
@@ -162,6 +166,10 @@ a:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+}
+
+.footer-skewed-container {
+  margin-top: 100px !important;
 }
 
 @media only screen and (max-width: 769px) {
