@@ -20,7 +20,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 
 			<Row className="justify-content-center align-items-center">
 				<Col sm={3} className="wsize1 mb-2 d-flex flex-column align-items-start">
-                    <span className="counter-number text-left">{("0" + days).slice(-2)}</span>
+                    <span className="counter-number text-left">{days}</span>
                     <span className="counter-text">Days</span>
                 </Col>
 

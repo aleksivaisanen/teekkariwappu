@@ -50,5 +50,6 @@ if (process.env.NODE_ENV === 'production') {
 const port = process.env.PORT || 5000;
 
 //create user
-dataInitializer.createUser();
+// dataInitializer.createUser();
+
 app.listen(port, () => console.log(`Server started on port ${port}`));
