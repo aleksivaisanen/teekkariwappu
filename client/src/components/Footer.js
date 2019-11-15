@@ -11,7 +11,7 @@ class Footer extends Component {
     render() {
         return (
             <SkewedContainer className="footer-skewed-container" top="left" bgColor="#f4943f">
-                <Container fluid className="mt-5">
+                <Container className="mt-5">
                     <Row>
                         <Col md={6} className="d-flex flex-row justify-content-center align-items-end">
                             <img className="guild-logo" src={digit} alt="Digit ry"/>
