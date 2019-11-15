@@ -167,19 +167,24 @@ a:hover, .card-footer a:hover {
   background-position: bottom;
 }
 
-.footer-skewed-container {
-  margin-top: 100px !important;
-  padding-bottom: 50px !important;
+.footer-container {
+  background-color: #f4943f;
 }
 
 .guild-logo {
-  max-height: 120px;
+  max-height: 140px;
+  margin-right: 10px;
+}
+
+.social-media-link {
+  font-weight: 600;
+
 }
 
 .social-media {
-  max-height: 50px;
+  max-height: 40px;
   display: inline !important;
-  margin: 10px 0 10px 10px;
+  margin: 2px 5px;
 }
 
 @media only screen and (max-width: 769px) {
