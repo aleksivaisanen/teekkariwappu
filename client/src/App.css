@@ -144,7 +144,6 @@ a:hover, .card-footer a:hover {
   margin: 0 !important;
 }
 
-
 .wappuvideo-container {
   position: relative;
   height: 0;
@@ -170,6 +169,17 @@ a:hover, .card-footer a:hover {
 
 .footer-skewed-container {
   margin-top: 100px !important;
+  padding-bottom: 50px !important;
+}
+
+.guild-logo {
+  max-height: 120px;
+}
+
+.social-media {
+  max-height: 50px;
+  display: inline !important;
+  margin: 10px 0 10px 10px;
 }
 
 @media only screen and (max-width: 769px) {
