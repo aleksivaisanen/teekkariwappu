@@ -1,10 +1,15 @@
 # Teekkariwappu.fi
 
-> Teekkariwappu.fi, wappu app built with the MERN stack along with Redux for state management, Reactstrap and react-transition-group.
+> Teekkariwappu.fi, wappu app built with the MERN stack along with Redux for state management and Reactstrap.
 
 ## Quick Start
 
-Add your MONGO_URI to the default.json file. Make sure you set an env var for that and the jwtSecret on deployment
+Add   
+```
+MONGODB_URI = <your mongodb uri>
+JWT_SECRET = <your jwt secret>
+```
+to .env file
 
 ```bash
 # Install dependencies for server
