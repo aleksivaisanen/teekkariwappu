@@ -3,11 +3,16 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Login from './auth/Login'
 import AdminEventView from './AdminEventView';
+import { loadUser } from '../actions/authActions'
 
 class AdminMainView extends Component {
     static propTypes = {
         auth: PropTypes.object.isRequired
     };
+
+    componentDidMount() {
+        this.props.loadUser();
+    }
 
     render() {
         const isAuthenticated = this.props.auth.isAuthenticated && localStorage.getItem('token') != null;
@@ -32,5 +37,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    null
+    { loadUser }
 )(AdminMainView);
