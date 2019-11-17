@@ -131,13 +131,22 @@ a:hover, .card-footer a:hover {
   font-size: 2rem;
 }
 
+.smaller-font {
+  font-size: 1.5rem;
+}
+
 .menossa-mukana br {
   line-height: 50%;
 }
 
 .menossa-mukana {
   font-size: 1rem;
-  line-height: 0.5;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.menossa-mukana > p {
+  margin-top: 20px;
 }
 
 .video-component-container {
