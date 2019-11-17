@@ -62,6 +62,7 @@ a:hover, .card-footer a:hover {
 
 .card-body {
   padding: 1rem;
+  white-space: pre-line;
 }
 
 .card-footer {
