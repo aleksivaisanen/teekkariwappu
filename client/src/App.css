@@ -79,7 +79,7 @@ a:hover, .card-footer a:hover {
 }
 
 .jumbotron-fluid > .container {
-  min-height: 500px;
+  min-height: calc(100vh - 100px);
   margin: 50px auto;
   color: white;
 }
