@@ -224,11 +224,6 @@ a:hover, .card-footer a:hover {
     padding: 0 !important;
   }
 
-  .container {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-
   .wappu-counter-item {
     display: flex;
     flex-direction: column;
