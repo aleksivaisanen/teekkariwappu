@@ -73,7 +73,7 @@ class CounterToWappu extends Component {
 
     render() {
         return (
-            <div className="countdown-container mb-5 mt-5">
+            <div className="countdown-container mb-3 mt-3">
                 <Countdown
                     date={this.state.firstEventDate}
                     renderer={renderer}

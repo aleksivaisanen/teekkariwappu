@@ -82,9 +82,12 @@ a:hover, .card-footer a:hover {
   min-height: calc(100vh);
   margin: 0 auto;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.jumbotron-fluid > .container > h1 {
+.heading {
   padding-top: 1rem;
   font-size: 5rem;
 }
@@ -223,9 +226,13 @@ a:hover, .card-footer a:hover {
     align-items: center;
   }
 
-  .jumbotron-fluid > .container > h1 {
+  .heading {
     padding-top: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .medium-font {
+    font-size: 1.5rem;
   }
 
   .wappuvideo {
