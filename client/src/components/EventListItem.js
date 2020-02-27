@@ -46,7 +46,7 @@ class EventListItem extends Component {
                     </CardBody>
                     {event.enrolLink !== "" &&
                         <CardFooter>
-                            <b><a href={event.enrolLink}>Ilmoittaudu tapahtumaan tästä!</a></b>
+                            <b><a href={event.enrolLink}>Tapahtumasivulle/ilmoittautumaan pääset tästä!</a></b>
                         </CardFooter>
                     }
                     {window.location.href.includes('/admin') &&
@@ -57,7 +57,7 @@ class EventListItem extends Component {
                                 alertEnabled={false}
                                 containerClass="edit-eventmodal"
                             />
-                            <DeleteEventButton 
+                            <DeleteEventButton
                                 eventId={event._id}
                             />
                         </CardFooter>
