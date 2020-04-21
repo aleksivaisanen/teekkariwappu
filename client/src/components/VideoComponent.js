@@ -8,7 +8,7 @@ class VideoComponent extends Component {
             <SkewedContainer className="video-component-container py-5" top="right" bottom="left" bgColor="#FED22A" >
                 <Container>
                     <div className="wappuvideo-container">
-                        <iframe src="https://www.youtube.com/embed/RJ9E6zQFzCM"
+                        <iframe src="https://www.youtube.com/embed/UNLPQWieA2k"
                             title="Wappuvideo"
                             className="wappuvideo"
                             frameBorder="0"
