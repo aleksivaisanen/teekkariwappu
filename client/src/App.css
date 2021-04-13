@@ -215,6 +215,10 @@ a:hover, .card-footer a:hover {
   align-items: flex-start;
 }
 
+.ohje-container p {
+  white-space: pre-line;
+}
+
 @media only screen and (max-width: 769px) {
   .counter-number {
     font-size: 4rem;
