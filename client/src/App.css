@@ -189,6 +189,10 @@ a:hover, .card-footer a:hover {
   margin-right: 10px;
 }
 
+.guild-logo-without-margin {
+  max-height: 140px;
+}
+
 .social-media-link {
   font-weight: 600;
 
