@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getEvents } from '../actions/eventActions';
 import { Container } from 'reactstrap';
 import EventListItem from './EventListItem';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 
 class EventList extends Component {
   constructor(props) {
@@ -87,12 +87,12 @@ class EventList extends Component {
                   Tapahtumien osallistujalistoja seurataan, joten olethan rehellinen noutaessasi merkkejä.
                 </p>
                 <p>
-                  Wapun viettäjille tehdään oma Discord-kanava, jota käytämme eri tapahtumiin ja viestintään. Wappu-Discordia käytetään myös päiväkohtaisten haasteiden taltiointiin. Discordiin liittymisestä ilmoitetaan myöhemmin.
+                  Wapun viettäjille tehdään oma Discord-kanava, jota käytämme eri tapahtumiin ja viestintään. Wappu-Discordia käytetään myös päiväkohtaisten haasteiden taltiointiin.
                 </p>
                 <p>
-                  Koko Wapun ajan on käynnissä Wappuseikkailu. Seikkailuun kuuluu erilaisia rasteja, joiden avulla pääsee kulkemaan ympäri Turkua ja ratkaisemaan kiperiä pulmia ja visaisia vinkkejä. Wappuseikkailua voi suorittaa täysin omaan tahtiin koko Wapun ajan yksin tai maksimissaan 4 hengen ryhmissä. Lisää infoa sekä tarkemmat ohjeet Wappuseikkailuun tulevat tälle sivulle myöhemmin.
+                  Koko Wapun ajan on käynnissä Wappuseikkailu. Seikkailuun kuuluu erilaisia rasteja, joiden avulla pääsee kulkemaan ympäri Turkua ja ratkaisemaan kiperiä pulmia ja visaisia vinkkejä. Wappuseikkailua voi suorittaa täysin omaan tahtiin koko Wapun ajan yksin tai maksimissaan 4 hengen ryhmissä.
                 </p>
-
+                <Button className="discord-button" onClick={() => window.location.href='https://discord.gg/hwWHsf8Wnn'}>Wappu-Discordiin pääset tästä!</Button>
               </Col>
             </Row>
           </>

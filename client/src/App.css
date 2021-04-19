@@ -221,6 +221,16 @@ a:hover, .card-footer a:hover {
 
 .ohje-container p {
   white-space: pre-line;
+  text-align: left;
+}
+.ohje-container {
+  text-align: center;
+}
+
+.discord-button {
+  background-color: #7289da;
+  color: #ffffff;
+  margin: 10px auto;
 }
 
 @media only screen and (max-width: 769px) {
