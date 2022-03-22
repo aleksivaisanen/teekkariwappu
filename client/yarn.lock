@@ -7487,11 +7487,6 @@
   dependencies:
     "xmlchars" "^2.2.0"
 
-"sc-react@^0.1.0":
-  "integrity" "sha512-56+tTJkUnK/kdth3KmaOYIrjfiJiy12v0GnIbBm3e9U1FR/SxVdEttlQBbZMjn/4lF8c08D5qOiQmrW+57wn/Q=="
-  "resolved" "https://registry.npmjs.org/sc-react/-/sc-react-0.1.0.tgz"
-  "version" "0.1.0"
-
 "scheduler@^0.18.0":
   "integrity" "sha512-agTSHR1Nbfi6ulI0kYNK0203joW2Y5W4po4l+v03tOoiJKpTBbxpNhWDvqc/4IcOw+KLmSiQLTasZ4cab2/UWQ=="
   "resolved" "https://registry.npmjs.org/scheduler/-/scheduler-0.18.0.tgz"

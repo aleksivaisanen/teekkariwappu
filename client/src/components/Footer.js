@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import digit from '../images/digit_boston.png';
 import nucleus from '../images/nucleus2.png';
 import machina from '../images/machina.png';
-import adamas from '../images/adamas.svg';
+import adamas from '../images/adamas.png';
 import fb from '../images/fb_logo.png';
 import ig from '../images/ig_logo.png';
 import www from '../images/www_logo.png';
