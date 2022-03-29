@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Jumbotron, Container } from 'reactstrap';
-import CounterToWappu from './CounterToWappu';
+import React, { Component } from "react";
+import { Jumbotron, Container } from "reactstrap";
+import CounterToWappu from "./CounterToWappu";
 
 class Header extends Component {
   render() {
@@ -15,24 +15,43 @@ class Header extends Component {
                 <i>#turunwappu</i>
               </p>
               <p className="text-center medium-font">
-                Wappufiilistä luomassa<br />
+                Wappufiilistä luomassa
+                <br />
                 <b>
                   <a href="https://digit.fi">Digit</a>
-                </b>,
-                                  <b>
+                </b>
+                ,
+                <b>
                   <a href="https://www.nucleus.fi"> Nucleus</a>
-                </b>,
-                                    <b>
-                  <a href="https://www.facebook.com/MateriaalitekniikankiltaAdamasry"> Adamas </a>
-                </b>&
-                                    <b>
-                  <a href="https://www.facebook.com/KonetekniikkaMachinary/"> Machina</a>
+                </b>
+                ,
+                <b>
+                  <a href="https://www.facebook.com/MateriaalitekniikankiltaAdamasry">
+                    {" "}
+                    Adamas{" "}
+                  </a>
+                </b>
+                &
+                <b>
+                  <a href="https://www.facebook.com/KonetekniikkaMachinary/">
+                    {" "}
+                    Machina
+                  </a>
                 </b>
                 <br />
-                <span className="menossa-mukana">
+                <br />
+                <span className="text-center medium-font">
                   <p>
                     Menossa mukana myös <br />
-                    <b><a href="http://teekkarikomissio.utu.fi/fi/index.html">Teekkarikomissio</a></b> & <b><a href="https://www.asteriski.fi">Asteriski</a></b>
+                    <b>
+                      <a href="http://teekkarikomissio.utu.fi/fi/index.html">
+                        Teekkarikomissio
+                      </a>
+                    </b>{" "}
+                    &{" "}
+                    <b>
+                      <a href="https://www.asteriski.fi">Asteriski</a>
+                    </b>
                   </p>
                 </span>
               </p>
