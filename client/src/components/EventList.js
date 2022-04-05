@@ -86,8 +86,8 @@ class EventList extends Component {
               <Col sm={12} className="ohje-container">
                 <p>Hauskaa Wappua eli Wapundeerusta!</p>
                 <p>
-                  Tältä sivulta löydät kaikki tervittavat tiedot vuoden 2022
-                  Teekkariwapusta ja siitä kunnialla selviämiseen. Wappua
+                  Tältä sivulta löydät kaikki tarvittavat tiedot vuoden 2022
+                  Teekkariwapusta ja siitä kunnialla selviämiseen. Wappu
                   pärähtää käyntiin 13.4. Wappulehden julkaisulla ja
                   Wapunaloitusbileillä ja jatkuu läpi huhtikuun aina
                   Wapunpäivään 1.5. asti. Wapunajan jokaiselle päivälle on
@@ -112,18 +112,19 @@ class EventList extends Component {
                 </p>
                 <p>
                   Wapun aikana käytössä on perinteinen Wappupassi, johon passin
-                  haltija voi kerätä leimoja osallistumistaan tapahtumista.
-                  Täytettyä passivastaan saa lunastettu itselleen
-                  Wappuputki-haalarimerkkejä 1.5. pidettävältä Vappupikinikiltä
-                  ja Wapun jälkeen Digit ry:n hallituslaisilta. Mitä enemmän
-                  tapahtumaleimoja keräät, sitä enemmän Wappuputkia ansaitset
-                  eli passia kannattaa höylätä ahkerasti! Wappupassin saa
-                  hankittua itselleen tapahtumista keltahattuisilta
-                  Wappukomissaareilta 6€ hintaan, joko mobile payllä tai
-                  käteisellä.
+                  haltija voi kerätä leimoja wapputapahtumista hattupäisiltä
+                  wappukomissaareilta. Täytettyä passia vastaan saa lunastettu
+                  itselleen Wappuputki-haalarimerkkejä 1.5. pidettävältä
+                  Vappupikinikiltä ja Wapun jälkeen Digit ry:n hallituslaisilta.
+                  Mitä enemmän tapahtumaleimoja keräät, sitä enemmän Wappuputkia
+                  ansaitset eli passia kannattaa höylätä ahkerasti! Wappuputkia
+                  voi ansaita maksimissaan 4 kpl ja tähän vaaditaan 17
+                  tapahtumaleimaa. Wappupassin saa hankittua itselleen
+                  tapahtumista keltahattuisilta Wappukomissaareilta 6€ hintaan,
+                  joko mobile payllä tai käteisellä.
                 </p>
                 <p>Loistokasta Wappua toivottaa, Wapputoimikunta</p>
-                <p>Wappu-fakta: Tämä teksti sisältää wappu-sanan 22 kertaa.</p>
+                <p>Wappu-fakta: Tämä teksti sisältää wappu-sanan 25 kertaa.</p>
                 {/* <p>
                   Perinteiseen tapaan tästäkin Wapusta saa Wappuputkimerkkejä tapahtumiin osallistumalla. Seuraa itse osallistumistasi, ja kerro siitä Wapun jälkeen Digitin tai Nucleuksen hallituslaiselle saadaksesi merkit. Merkkien määrä riippuu osallistumistasi tapahtumissa seuraavasti:
                 </p>
