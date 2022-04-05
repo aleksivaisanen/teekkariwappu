@@ -84,6 +84,46 @@ class EventList extends Component {
             <h3 className="text-center my-3">Ohjeet</h3>
             <Row>
               <Col sm={12} className="ohje-container">
+                <p>Hauskaa Wappua eli Wapundeerusta!</p>
+                <p>
+                  Tältä sivulta löydät kaikki tervittavat tiedot vuoden 2022
+                  Teekkariwapusta ja siitä kunnialla selviämiseen. Wappua
+                  pärähtää käyntiin 13.4. Wappulehden julkaisulla ja
+                  Wapunaloitusbileillä ja jatkuu läpi huhtikuun aina
+                  Wapunpäivään 1.5. asti. Wapunajan jokaiselle päivälle on
+                  luvassa monipuolista ohjelmaa aina vuoden railakkaimmista
+                  sitseistä terapeuttisiin hyvinvointipäiviin.
+                </p>
+                <p>
+                  Tämän sivun lisäksi Tapahtumista jaetaan myös ajankohtaista
+                  tietoa Telegramissa ja Discordissa, joihin kannattaa
+                  ehdottomasti liittyä.
+                  <br /> Wappu-Telegram:{" "}
+                  <a
+                    class="link-highlight"
+                    href="https://t.me/+Vt7YjxTtbZ40NGFk"
+                  >
+                    https://t.me/+Vt7YjxTtbZ40NGFk
+                  </a>
+                  <br /> Wappu-Discord:{" "}
+                  <a class="link-highlight" href="https://discord.gg/yh8CTgRK">
+                    https://discord.gg/yh8CTgRK
+                  </a>
+                </p>
+                <p>
+                  Wapun aikana käytössä on perinteinen Wappupassi, johon passin
+                  haltija voi kerätä leimoja osallistumistaan tapahtumista.
+                  Täytettyä passivastaan saa lunastettu itselleen
+                  Wappuputki-haalarimerkkejä 1.5. pidettävältä Vappupikinikiltä
+                  ja Wapun jälkeen Digit ry:n hallituslaisilta. Mitä enemmän
+                  tapahtumaleimoja keräät, sitä enemmän Wappuputkia ansaitset
+                  eli passia kannattaa höylätä ahkerasti! Wappupassin saa
+                  hankittua itselleen tapahtumista keltahattuisilta
+                  Wappukomissaareilta 6€ hintaan, joko mobile payllä tai
+                  käteisellä.
+                </p>
+                <p>Loistokasta Wappua toivottaa, Wapputoimikunta</p>
+                <p>Wappu-fakta: Tämä teksti sisältää wappu-sanan 22 kertaa.</p>
                 {/* <p>
                   Perinteiseen tapaan tästäkin Wapusta saa Wappuputkimerkkejä tapahtumiin osallistumalla. Seuraa itse osallistumistasi, ja kerro siitä Wapun jälkeen Digitin tai Nucleuksen hallituslaiselle saadaksesi merkit. Merkkien määrä riippuu osallistumistasi tapahtumissa seuraavasti:
                 </p>
@@ -103,7 +143,6 @@ class EventList extends Component {
                   Koko Wapun ajan on käynnissä Wappuseikkailu. Seikkailuun kuuluu erilaisia rasteja, joiden avulla pääsee kulkemaan ympäri Turkua ja ratkaisemaan kiperiä pulmia ja visaisia vinkkejä. Wappuseikkailua voi suorittaa täysin omaan tahtiin koko Wapun ajan yksin tai maksimissaan 4 hengen ryhmissä.
                 </p>
                 <Button className="discord-button" onClick={() => window.location.href='https://discord.gg/hwWHsf8Wnn'}>Wappu-Discordiin pääset tästä!</Button> */}
-                TBA!
               </Col>
             </Row>
           </>

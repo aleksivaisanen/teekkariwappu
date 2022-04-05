@@ -221,6 +221,12 @@ a:hover,
   margin: 10px auto;
 }
 
+.link-highlight {
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 769px) {
   .counter-number {
     font-size: 4rem;
