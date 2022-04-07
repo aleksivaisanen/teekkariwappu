@@ -28,15 +28,19 @@ class Header extends Component {
                 <b>
                   <a href="https://www.facebook.com/MateriaalitekniikankiltaAdamasry">
                     {" "}
-                    Adamas{" "}
+                    Adamas
+                  </a>
+                </b>
+                ,
+                <b>
+                  <a href="https://www.facebook.com/KonetekniikkaMachinary/">
+                    {" "}
+                    Machina{" "}
                   </a>
                 </b>
                 &
                 <b>
-                  <a href="https://www.facebook.com/KonetekniikkaMachinary/">
-                    {" "}
-                    Machina
-                  </a>
+                  <a href="https://www.asteriski.fi/"> Asteriski</a>
                 </b>
                 <br />
                 <br />
@@ -44,13 +48,24 @@ class Header extends Component {
                   <p>
                     Menossa mukana myös <br />
                     <b>
-                      <a href="http://teekkarikomissio.utu.fi/fi/index.html">
+                      <a href="https://teekkarikomissio.fi/fi">
                         Teekkarikomissio
                       </a>
-                    </b>{" "}
-                    &{" "}
+                    </b>
+                    ,<b> 37</b>,
                     <b>
-                      <a href="https://www.asteriski.fi">Asteriski</a>
+                      <a href="https://www.tio.fi/"> TIO</a>
+                    </b>
+                    ,
+                    <b>
+                      <a href="https://tykry.fi/"> TYKry </a>
+                    </b>
+                    &
+                    <b>
+                      <a href="https://www.beerpongturku.fi/">
+                        {" "}
+                        Beer Pong Turku
+                      </a>
                     </b>
                   </p>
                 </span>

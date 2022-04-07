@@ -113,18 +113,23 @@ class EventList extends Component {
                 <p>
                   Wapun aikana käytössä on perinteinen Wappupassi, johon passin
                   haltija voi kerätä leimoja wapputapahtumista hattupäisiltä
-                  wappukomissaareilta. Täytettyä passia vastaan saa lunastettu
+                  Wappukomissaareilta. Täytettyä passia vastaan saa lunastettu
                   itselleen Wappuputki-haalarimerkkejä 1.5. pidettävältä
                   Vappupikinikiltä ja Wapun jälkeen Digit ry:n hallituslaisilta.
                   Mitä enemmän tapahtumaleimoja keräät, sitä enemmän Wappuputkia
                   ansaitset eli passia kannattaa höylätä ahkerasti! Wappuputkia
                   voi ansaita maksimissaan 4 kpl ja tähän vaaditaan 17
-                  tapahtumaleimaa. Wappupassin saa hankittua itselleen
-                  tapahtumista keltahattuisilta Wappukomissaareilta 6€ hintaan,
-                  joko mobile payllä tai käteisellä.
+                  tapahtumaleimaa.
+                </p>
+                <p>
+                  Wappupassin saa hankittua itselleen 6€ hintaan
+                  värikäshattuisilta Wappukomissaareilta seuraavilla tavoilla:
+                  <br /> - Wapunaloitusbilesitä 13.4. Mobile payllä ja
+                  käteisellä.
+                  <br /> - Kaikista wapputapahtumista Mobile Paylla.
                 </p>
                 <p>Loistokasta Wappua toivottaa, Wapputoimikunta</p>
-                <p>Wappu-fakta: Tämä teksti sisältää wappu-sanan 25 kertaa.</p>
+                <p>Wappu-fakta: Tämä teksti sisältää wappu-sanan 26 kertaa.</p>
                 {/* <p>
                   Perinteiseen tapaan tästäkin Wapusta saa Wappuputkimerkkejä tapahtumiin osallistumalla. Seuraa itse osallistumistasi, ja kerro siitä Wapun jälkeen Digitin tai Nucleuksen hallituslaiselle saadaksesi merkit. Merkkien määrä riippuu osallistumistasi tapahtumissa seuraavasti:
                 </p>
