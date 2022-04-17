@@ -107,7 +107,7 @@ class EventList extends Component {
                   </a>
                   <br /> Wappu-Discord:{" "}
                   <a class="link-highlight" href="https://discord.gg/yh8CTgRK">
-                    https://discord.gg/yh8CTgRK
+                    https://discord.gg/rZmqPHC2CA
                   </a>
                 </p>
                 <p>
