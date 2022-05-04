@@ -80,7 +80,7 @@ class EventModal extends Component {
   };
 
   onDateChange = (date) => {
-    this.setState({ date });
+    this.setState({ date: new Date(date).toISOString() });
   };
 
   onSubmit = (e) => {
@@ -110,6 +110,20 @@ class EventModal extends Component {
     this.setState({
       modal: !this.state.modal,
     });
+  };
+
+  constructDate = (date) => {
+    return (
+      date.getFullYear() +
+      "-" +
+      (date.getMonth() + 1).toString().padStart(2, "0") +
+      "-" +
+      date.getDate().toString().padStart(2, "0") +
+      "T" +
+      date.getHours().toString().padStart(2, "0") +
+      ":" +
+      date.getMinutes().toString().padStart(2, "0")
+    );
   };
 
   render() {
@@ -157,7 +171,7 @@ class EventModal extends Component {
                   type="datetime-local"
                   id="date"
                   name="date"
-                  value={this.state.date}
+                  value={this.constructDate(new Date(this.state.date))}
                   onChange={(e) => this.onDateChange(e.target.value)}
                 />
                 <Label for="place">Tapahtuman paikka</Label>
